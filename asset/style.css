@@ -1,0 +1,10 @@
+@import "reset.css";
+#wrapper {background: red;}
+#wrapper {width:100%; max-width:1280px; margin:0 auto;}
+
+.top_area {}
+.top_area h1 {}
+.top_area h1 {}
+.main_area {}
+.main_area img {width:100%; margin:0 auto;}
+.bottom_area {}

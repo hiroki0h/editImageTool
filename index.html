@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Black+And+White+Picture&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kirang+Haerang&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="asset/common.css">
+    <title>Edit Image</title>
+</head>
+<body>
+<div id="wrapper">
+    <section class="top_area">
+        <h1>이미지 꾸미기</h1>
+        <div class="top_area_box">
+            <input type="file" name="fileInput" id="fileInput" accept="image/*">
+            <label for="fileInput">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17">
+                    <path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path></svg>
+                <span>Choose a file</span>
+            </label>
+        </div>
+    </section>
+    <section class="main_area on">
+        <div class="canvas">
+            <canvas id="jsCanvas"></canvas>
+        </div>
+        <div class="edit_tool">
+            <div class="edit_tool_sticker">
+                <p class="edit_tool_title">스티커 선택<span>(크기 선택 가능)</span></p>
+                <ul >
+                    <li>
+                        <img src="./asset/images/1.png" alt="">
+                    </li>
+                    <li>
+                        <img src="./asset/images/2.png" alt="">
+                    </li>
+                    <li>
+                        <img src="./asset/images/3.png" alt="">
+                    </li>
+                    <li>
+                        <img src="./asset/images/4.png" alt="">
+                    </li>
+                    <li>
+                        <img src="./asset/images/5.png" alt="">
+                    </li>
+                </ul>
+            </div>
+            <div class="edit_tool_text">
+                <p class="edit_tool_title">글 쓰기<span>(글씨체, 색, 크기 선택 가능)</span></p>
+                <input type="text" id="toolText"/>
+            </div>
+            <div class="edit_tool_font_family">
+                <p class="edit_tool_title">글씨체 선택</p>
+                <select name="font" id="fontFamily" class="font_family">
+                    <option value="Gugi" class="font_family_01">Gugi</option>
+                    <option value="Black And White Picture" class="font_family_02">Black And White Picture</option>
+                    <option value="Kirang Haerang" class="font_family_03">Kirang Haerang</option>
+                </select>
+            </div>
+            <div class="edit_tool_brush">
+                <p class="edit_tool_title">그리기<span>(색, 크기 선택 가능)</span></p>
+                <div class="img_wrap">
+                    <img src="./asset/images/icon_brush.png" alt="">
+                </div>
+            </div>
+            <div class="edit_tool_color edit_tool_common">
+                <p class="edit_tool_title">색 선택</p>
+                <ul>
+                    <li style="background-color:#FFF">White</li>
+                    <li style="background-color:#FF0000">Red</li>
+                    <li style="background-color:#FF5E00">Orange</li>
+                    <li style="background-color:#FFE400">Yellow</li>
+                    <li style="background-color:#006F00">Green</li>
+                    <li style="background-color:#0000B7">Blue</li>
+                    <li style="background-color:#8324FF">Purple</li>
+                    <li style="background-color:#000">Black</li>
+                </ul>
+            </div>
+            <div class="edit_tool_size edit_tool_common">
+                <p class="edit_tool_title">크기 선택</p>
+                <input type="range" id="toolSize" min="10" max="50" value="30" step="10"/>
+            </div>
+        </div>
+    </section>
+    <section class="bottom_area on">
+        <button type="button" id="btn_save" class="btn"><span>Save</span></button>
+        <button type="button" id="btn_reset" class="btn"><span>Reset</span></button>
+    </section>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

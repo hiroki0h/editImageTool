@@ -1,0 +1,29 @@
+@mixin vw-convert-pc($property, $pc-pixel){
+    @if type-of($pc-pixel) == number {
+        //#{$property}: $pc-pixel*1px;
+        #{$property}: $pc-pixel*100/1320*1vw;
+        @media (min-width:1320px) {
+            #{$property}: $pc-pixel*1px;
+        }
+    }
+    @else if type-of($pc-pixel) == string {
+        #{$property}: auto;
+        @media (min-width:1320px) {
+            #{$property}: auto;
+        }
+    }
+};
+@mixin vw-convert-mo($property, $mo-pixel){
+    @if type-of($mo-pixel) == number {
+        #{$property}: $mo-pixel*100/360*1vw;
+        @media (min-width:360px) {
+            #{$property}: $mo-pixel*100/360*1vw;
+        }
+    }
+    @else if type-of($mo-pixel) == string {
+        #{$property}: auto;
+        @media (min-width:360px) {
+            #{$property}: auto;
+        }
+    }
+};
